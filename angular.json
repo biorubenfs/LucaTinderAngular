@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "LucaTinder-Angular"
+    }
+  },
+  "defaultProject": "LucaTinder-Angular",
+  "cli": {
+    "analytics": "c2b14ec8-2605-4e3a-bce9-180337fe70da"
+  }
 }
