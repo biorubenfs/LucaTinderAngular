@@ -1,1 +1,30 @@
 <p>perfil-list works!</p>
+<div class="col-md-6">
+  <h2> Detalles Perfiles</h2>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th class="hidden">Id</th>
+        <th>Nombre</th>
+        <th>Genero</th>
+        <th>Descripcion</th>
+        <th>Foto</th>
+        <th>Password</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let perfil of perfiles">
+        <td class="hidden">{{perfil.id}}</td>
+        <td>{{perfil.nombre}}</td>
+        <td>{{perfil.genero}}</td>
+        <td>{{perfil.descripcion}}</td>
+        <td>{{perfil.foto}}</td>
+        <td>{{perfil.password}}</td>
+        <td>{{perfil.email}}</td>
+        <!-- <td><button class="btn btn-danger" (click)=""> Boton provisional</button></td> -->
+      </tr>
+    </tbody>
+  </table>
+</div>

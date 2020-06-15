@@ -14,14 +14,13 @@ export class PerfilServicioService {
 
   constructor(private http:HttpClient) { }
 
-  private perfilUrl='http://localhost:8080/rperfil/alta';
+  private perfilUrl='http://localhost:8080/rperfil';
 
-  public getPerfil(){
-    return this.http.get<Perfil[]>(this.perfilUrl);
-
+  public getPerfiles(){
+    return this.http.get<Perfil[]>(this.perfilUrl + "/listar");
   }
 
   public crearPerfil(perfil:Perfil){
-    return this.http.post<Perfil>(this.perfilUrl, perfil);
+    return this.http.post<Perfil>(this.perfilUrl + "/alta", perfil);
   }
 }
