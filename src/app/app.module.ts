@@ -3,20 +3,26 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PerfilAddComponent } from './components/perfil-add/perfil-add.component';
-import { PerfilListComponent } from './components/perfil-list/perfil-list.component';
+import { PerfilAddComponent } from './componentes/perfil-add/perfil-add.component';
+import { PerfilListaComponent } from './componentes/perfil-lista/perfil-lista.component';
+
+import {PerfilServicioService} from './servicio/perfil-servicio.service';
+import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     PerfilAddComponent,
-    PerfilListComponent
+    PerfilListaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [PerfilServicioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
