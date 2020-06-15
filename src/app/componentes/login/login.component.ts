@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   title = 'LoginBasico';
 
   public perfilLogged:Perfil;
+  emailREST:String
 
   constructor(
     private loginService: LoginService,
@@ -29,7 +30,7 @@ export class LoginComponent implements OnInit {
     console.log(this.perfilLogged);
   }
 
-  logIn(email: string, password: string, event: Event) {
+  /*logIn(email: string, password: string, event: Event) {
 
     event.preventDefault(); 
 
@@ -62,6 +63,14 @@ export class LoginComponent implements OnInit {
   navigate() {
     console.log("--- LoginComponent > navigate >>>> recargando página");
     window.location.reload();
+  }*/
+
+  onSubmit():void{
+    this.perfilServicio.findByEmail(this.emailREST).subscribe(result=>this.goToListado(+result.email));
+  }
+
+  goToListado(id:Number):void{
+    this.router.navigate(['/inicio', this.emailREST]);
   }
 
 }
