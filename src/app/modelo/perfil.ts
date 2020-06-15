@@ -6,6 +6,6 @@ export class Perfil {
     descripcion:string
     password:string
     email:string
-    //enabled:boolean
-    //foto:String
+    enabled:boolean = true;
+    foto:String = "";
 }
