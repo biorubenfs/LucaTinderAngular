@@ -9,12 +9,15 @@ import { PerfilListaComponent } from './componentes/perfil-lista/perfil-lista.co
 import {PerfilServicioService} from './servicio/perfil-servicio.service';
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './componentes/login/login.component';
+import{LoginService} from './servicio/login.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     PerfilAddComponent,
-    PerfilListaComponent
+    PerfilListaComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [PerfilServicioService],
+  providers: [LoginService,PerfilServicioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
