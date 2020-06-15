@@ -1,16 +1,15 @@
-
-<div class="container-fluid">
-  <div class="col-md-offset-1">
-    <h1>
-      Registro de Perfiles
-    </h1>
-  </div>
+<div style="text-align:center">
+  <h1>
+    Inicio Lucatinder
+  </h1>
+  <nav>
+    <a style="text-align:center" routerLink="login">Login</a> 
+    <a style="text-align:center" routerLink="add">Agregar Perfil</a>     
+  </nav>
+  <!-- Necesario para que se realicen los enlaces-->
+  <main>
+    <router-outlet></router-outlet>
+  </main>
   
-  <!--<a routerLink="/users">List Users</a>-->
-  <a style="margin-left:10px" routerLink="/add">Add Perfil</a>
-  <a style="margin-left:10px" routerLink="/listar">Listar Perfiles</a>
-  
-  <br/>
-  <router-outlet></router-outlet>
-  <app-login></app-login>
-  </div>
+  <p class="footer">LucatinderWeb</p>
+</div>

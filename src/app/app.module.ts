@@ -11,13 +11,15 @@ import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './componentes/login/login.component';
 import{LoginService} from './servicio/login.service';
+import { InicioPerfilComponent } from './componentes/inicio-perfil/inicio-perfil.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PerfilAddComponent,
     PerfilListaComponent,
-    LoginComponent
+    LoginComponent,
+    InicioPerfilComponent
   ],
   imports: [
     BrowserModule,

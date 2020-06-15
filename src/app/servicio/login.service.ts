@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginService {
 
-  public url:string = 'https://reqres.in/api/login';
+  public url:string = 'https://localhost:8080/rperfil/login';
 
   constructor(private http: HttpClient) { }
 
