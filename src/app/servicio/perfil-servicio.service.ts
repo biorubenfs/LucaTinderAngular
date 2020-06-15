@@ -47,4 +47,9 @@ export class PerfilServicioService {
     console.log("--- Perfil.service > destroyPerfilLogged::  destruyo perfil");
     localStorage.removeItem('PerfilLog');
   }
+
+  findByEmail(email:String){
+    return this.http.get<Perfil>(this.perfilUrl+"/listar");
+  }
+
 }
