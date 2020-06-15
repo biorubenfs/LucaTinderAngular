@@ -12,7 +12,12 @@ const httpOptions = {
 })
 export class PerfilServicioService {
 
-  constructor(private http:HttpClient) { }
+  private isPerfilLoggedIn:boolean;
+  public perfilLogged:Perfil;
+
+  constructor(private http:HttpClient) { 
+    this.isPerfilLoggedIn = false;
+  }
 
   private perfilUrl='http://localhost:8080/rperfil';
 
@@ -22,5 +27,24 @@ export class PerfilServicioService {
 
   public crearPerfil(perfil:Perfil){
     return this.http.post<Perfil>(this.perfilUrl + "/alta", perfil);
+  }
+
+  setPerfilLoggedIn(perfil:Perfil) {
+    this.isPerfilLoggedIn = true;
+    this.perfilLogged = perfil;
+    console.log("--- Perfil.service > setPerfilLoggedIn::  guardo perfil");
+    localStorage.setItem('PerfilLog', JSON.stringify(perfil));
+  
+  }
+
+  getPerfilLoggedIn() {
+    console.log("--- Perfil.service > getPerfilLoggedIn::  recupero perfil");
+  	return JSON.parse(localStorage.getItem('PerfilLog'));
+  }
+
+  destroyPerfilLogged(){
+    this.isPerfilLoggedIn = false;
+    console.log("--- Perfil.service > destroyPerfilLogged::  destruyo perfil");
+    localStorage.removeItem('PerfilLog');
   }
 }
