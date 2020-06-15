@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PerfilListComponent } from './perfil-list.component';
+import { PerfilListComponent } from './perfil-lista.component';
 
-describe('PerfilListComponent', () => {
+describe('PerfilListaComponent', () => {
   let component: PerfilListComponent;
   let fixture: ComponentFixture<PerfilListComponent>;
 
