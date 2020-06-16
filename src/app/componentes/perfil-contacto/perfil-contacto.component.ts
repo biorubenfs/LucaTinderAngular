@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Perfil } from '../../modelo/perfil';
 import{PerfilServicioService} from '../../servicio/perfil-servicio.service';
-import{ Router} from '@angular/router';
+import{ Router, ActivatedRoute} from '@angular/router';
 
 
 @Component({
@@ -14,12 +14,12 @@ export class PerfilContactoComponent implements OnInit {
   perfiles: Perfil[];
   id: number;
 
-  constructor(private router: Router, private perfilServicio: PerfilServicioService) { }
+  constructor(private router: ActivatedRoute, private perfilServicio: PerfilServicioService) { }
 
   ngOnInit(): void {
-    this.perfilServicio.getContactos(this.id)
-    .subscribe(data => {
-      //this.perfiles = data;
+    this.router.params.subscribe(params =>{this.id= +params['id']})
+    this.perfilServicio.getContactos(this.id).subscribe(data => {
+      this.perfiles = data;
     });
   }
 

@@ -29,7 +29,7 @@ export class PerfilServicioService {
     return this.http.post<Perfil>(this.perfilUrl + "/alta", perfil);
   }
 
-  setPerfilLoggedIn(perfil:Perfil) {
+  /*setPerfilLoggedIn(perfil:Perfil) {
     this.isPerfilLoggedIn = true;
     this.perfilLogged = perfil;
     console.log("--- Perfil.service > setPerfilLoggedIn::  guardo perfil");
@@ -46,14 +46,14 @@ export class PerfilServicioService {
     this.isPerfilLoggedIn = false;
     console.log("--- Perfil.service > destroyPerfilLogged::  destruyo perfil");
     localStorage.removeItem('PerfilLog');
-  }
+  }*/
 
-  public findByEmail(email:String){
-    return this.http.get<Perfil>(this.perfilUrl+"/listar");
+  public findByEmail(email:string){
+    return this.http.get<Perfil>(this.perfilUrl+"/listar/"+email);
   }
 
   public getContactos(id:number) {
-    return this.http.get<Perfil>(this.perfilUrl+"/listarContactos" + id);
+    return this.http.get<Perfil[]>(this.perfilUrl+"/listarContactos/"+id);
   }
 
 }

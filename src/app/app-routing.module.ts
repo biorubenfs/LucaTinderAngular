@@ -13,14 +13,14 @@ const routes: Routes = [
     component:PerfilAddComponent
   },
   {
-    path:'listar',
+    path:'listar/:id',
     component:PerfilListaComponent
   },
   { path: 'login', 
     component: LoginComponent,  
     pathMatch: 'full'
   },
-  { path: 'contacto', 
+  { path: 'listar/:id/contacto', 
     component: PerfilContactoComponent
   }
 
