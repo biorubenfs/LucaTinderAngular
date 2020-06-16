@@ -1,15 +1,15 @@
-<div style="text-align:center">
-  <h1>
-    Inicio Lucatinder
-  </h1>
-  <nav>
-    <a style="text-align:center" routerLink="login">Login</a> 
-    <a style="text-align:center" routerLink="add">Agregar Perfil</a>     
-  </nav>
-  <!-- Necesario para que se realicen los enlaces-->
+<header>
+  <div style="text-align:left">
+    <nav>
+      <p> Bienvenido a LucaTinder</p>
+      <a style="text-align:center" routerLink="login">Login</a>
+      <a style="text-align:center" routerLink="add">Agregar Perfil</a>
+    </nav>
+  </div>
+</header>
+
+<body>
   <main>
     <router-outlet></router-outlet>
   </main>
-  
-  <p class="footer">LucatinderWeb</p>
-</div>
+</body>
