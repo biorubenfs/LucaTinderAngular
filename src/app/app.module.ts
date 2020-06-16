@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './componentes/login/login.component';
 import{LoginService} from './servicio/login.service';
 import { PerfilContactoComponent } from './componentes/perfil-contacto/perfil-contacto.component';
+import { PerfilDescarteComponent } from './componentes/perfil-descarte/perfil-descarte.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PerfilContactoComponent } from './componentes/perfil-contacto/perfil-co
     PerfilAddComponent,
     PerfilListaComponent,
     LoginComponent,
-    PerfilContactoComponent
+    PerfilContactoComponent,
+    PerfilDescarteComponent
   ],
   imports: [
     BrowserModule,
