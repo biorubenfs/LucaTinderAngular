@@ -66,11 +66,11 @@ export class LoginComponent implements OnInit {
   }*/
 
   onSubmit():void{
-    this.perfilServicio.findByEmail(this.emailREST).subscribe(result=>this.goToListado(+result.email));
+    this.perfilServicio.findByEmail(this.emailREST).subscribe(result=>this.goToListado(+result.id));
   }
 
   goToListado(id:Number):void{
-    this.router.navigate(['/inicio', this.emailREST]);
+    this.router.navigate(['/inicio', id]);
   }
 
 }

@@ -1,19 +1,39 @@
 <div class="container" style="text-align:center">
-    <h1>Inicio de sesión</h1>
-  
-    <form class="form">
-      <div *ngIf="!perfilLogged">
+  <h1>Inicio de sesión</h1>
+
+  <form class="form">
+    <div *ngIf="!perfilLogged">
       <p>
         <input type="text" #email name="email" placeholder="Email"><br />
         <input type="password" #password name="password" placeholder="Password" autocomplete="on"></p>
       <p>
         <!--<button type="submit" (click)="logIn(email.value, password.value, $event)" id="login-button" class="btn btn-outline-success">Login</button></p> </div>-->
-        <button type="submit" (click)="onSubmit()"id="login-button" class="btn btn-outline-success">Login</button></p></div>
-        <!--<p><button type="submit" (click)="logOut($event)" id="logout-button" class="btn btn-outline-danger">Destruir sesion</button></p>-->
-    </form>
-    
-<!-- fijate que en el componente esto es un objeto-->
-<!--<div *ngIf="usserLogged">
+        <button type="submit" (click)="onSubmit()" id="login-button" class="btn btn-outline-success">Login</button></p>
+    </div>
+    <!--<p><button type="submit" (click)="logOut($event)" id="logout-button" class="btn btn-outline-danger">Destruir sesion</button></p>-->
+  </form>
+  
+
+  <!-- fijate que en el componente esto es un objeto-->
+  <div *ngIf="perfilLogged">
+    <hr />
+    <!-- The content below is only a placeholder and can be replaced. -->
+    <div style="text-align:center">
+      <h2>
+        Welcome to {{ title }}!
+      </h2>
+      El usuario {{perfilLogged.email}} está activo<br />
+
+      <app-inicio-perfil></app-inicio-perfil>
+      
+    </div>
+
+  </div>
+
+
+
+  <!-- fijate que en el componente esto es un objeto-->
+  <!--<div *ngIf="usserLogged">
     <hr/>
     The content below is only a placeholder and can be replaced.
     <div style="text-align:center">
@@ -28,4 +48,4 @@
     
   </div>-->
 
-</div>  
+</div>
