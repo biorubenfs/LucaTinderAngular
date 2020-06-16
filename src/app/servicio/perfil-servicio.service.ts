@@ -48,7 +48,7 @@ export class PerfilServicioService {
     localStorage.removeItem('PerfilLog');
   }
 
-  findByEmail(email:String){
+  public findByEmail(email:String){
     return this.http.get<Perfil>(this.perfilUrl+"/listar");
   }
 

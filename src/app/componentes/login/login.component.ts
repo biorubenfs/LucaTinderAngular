@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
 
   title = 'LoginBasico';
 
+  perfil:Perfil=new Perfil();
   public perfilLogged:Perfil;
   emailREST:String
 
@@ -25,16 +26,16 @@ export class LoginComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.perfilLogged = this.perfilServicio.getPerfilLoggedIn();
-    console.log("--- LoginComponent > ngOnInit > getPerfilLoggedIn: Datos al arrancar ");
-    console.log(this.perfilLogged);
+    //this.perfilLogged = this.perfilServicio.getPerfilLoggedIn();
+    //console.log("--- LoginComponent > ngOnInit > getPerfilLoggedIn: Datos al arrancar ");
+    //console.log(this.perfilLogged);
   }
 
   /*logIn(email: string, password: string, event: Event) {
 
     event.preventDefault(); 
 
-    this.loginService.login(email, password).subscribe(
+    this.loginService.login(email,password).subscribe(
 
       res => {
         
@@ -48,7 +49,7 @@ export class LoginComponent implements OnInit {
       error => {
         console.error(error);
       },
-      () => this.navigate()
+      () => this.goToListado
     );
 
   }
@@ -66,11 +67,11 @@ export class LoginComponent implements OnInit {
   }*/
 
   onSubmit():void{
-    this.perfilServicio.findByEmail(this.emailREST).subscribe(result=>this.goToListado(+result.email));
+    this.perfilServicio.findByEmail(this.emailREST).subscribe(result=>this.goToListado(+result.id));
   }
 
   goToListado(id:Number):void{
-    this.router.navigate(['/inicio', this.emailREST]);
+    this.router.navigate(['/inicio']);
   }
 
 }
