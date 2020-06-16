@@ -56,4 +56,8 @@ export class PerfilServicioService {
     return this.http.get<Perfil[]>(this.perfilUrl+"/listarContactos/"+id);
   }
 
+  public getDescartes(id:number) {
+    return this.http.get<Perfil[]>(this.perfilUrl+"/listarDescartes/"+id);
+  }
+
 }
