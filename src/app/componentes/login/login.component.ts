@@ -15,9 +15,9 @@ export class LoginComponent implements OnInit {
 
   title = 'LoginBasico';
 
-  perfil:Perfil=new Perfil();
-  public perfilLogged:Perfil;
-  emailREST:String
+  //perfil:Perfil=new Perfil();
+  //public perfilLogged:Perfil;
+  email:string
 
   constructor(
     private loginService: LoginService,
@@ -67,11 +67,11 @@ export class LoginComponent implements OnInit {
   }*/
 
   onSubmit():void{
-    this.perfilServicio.findByEmail(this.emailREST).subscribe(result=>this.goToListado(+result.id));
+    this.perfilServicio.findByEmail(this.email).subscribe(result=>this.goToListado(+result.id));
   }
 
   goToListado(id:Number):void{
-    this.router.navigate(['/listar']);
+    this.router.navigate(['/listar', id]);
   }
 
 }
