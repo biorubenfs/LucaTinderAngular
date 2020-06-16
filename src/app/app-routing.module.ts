@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import{PerfilAddComponent} from './componentes/perfil-add/perfil-add.component';
 import { PerfilListaComponent } from './componentes/perfil-lista/perfil-lista.component';
 import{LoginComponent} from './componentes/login/login.component';
+import {PerfilContactoComponent } from './componentes/perfil-contacto/perfil-contacto.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,11 @@ const routes: Routes = [
   { path: 'login', 
     component: LoginComponent,  
     pathMatch: 'full'
+  },
+  { path: 'contacto', 
+    component: PerfilContactoComponent
   }
+
 ];
 
 @NgModule({

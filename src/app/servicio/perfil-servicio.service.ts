@@ -52,4 +52,8 @@ export class PerfilServicioService {
     return this.http.get<Perfil>(this.perfilUrl+"/listar");
   }
 
+  public getContactos(id:number) {
+    return this.http.get<Perfil>(this.perfilUrl+"/listarContactos" + id);
+  }
+
 }
