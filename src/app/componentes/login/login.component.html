@@ -1,31 +1,26 @@
 <div class="container" style="text-align:center">
-    <h1>Inicio de sesión</h1>
-  
+    <h1>Inicio de sesión</h1> 
     <form class="form">
       <div *ngIf="!perfilLogged">
       <p>
-        <input type="text" #email name="email" placeholder="Email"><br />
-        <input type="password" #password name="password" placeholder="Password" autocomplete="on"></p>
+        <input type="text" [(ngModel)]="perfil.email" name="email" placeholder="Email"><br />
+        <input type="password" name="password" placeholder="Password" autocomplete="on"></p>
       <p>
-        <!--<button type="submit" (click)="logIn(email.value, password.value, $event)" id="login-button" class="btn btn-outline-success">Login</button></p> </div>-->
-        <button type="submit" (click)="onSubmit()"id="login-button" class="btn btn-outline-success">Login</button></p></div>
-        <!--<p><button type="submit" (click)="logOut($event)" id="logout-button" class="btn btn-outline-danger">Destruir sesion</button></p>-->
+        <button type="submit" (click)="onSubmit()"id="login-button" class="btn btn-outline-success">Login</button></p></div>       
     </form>
-    
+    <!--El usuario {{perfilLogged.email}} está activo<br/>-->
 <!-- fijate que en el componente esto es un objeto-->
-<!--<div *ngIf="usserLogged">
+<div *ngIf="perfilLogged">
     <hr/>
     The content below is only a placeholder and can be replaced.
     <div style="text-align:center">
       <h2>
         Welcome to {{ title }}!
       </h2>
-      El usuario {{usserLogged.username}} está activo<br/>
-      <img width="150" alt="Angular Logo"
-        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-        <app-home></app-home>
+      El usuario {{perfilLogged.email}} está activo<br/>
+        <!--<app-home></app-home>-->
     </div>
     
-  </div>-->
+  </div>
 
 </div>  
