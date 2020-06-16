@@ -71,7 +71,7 @@ export class LoginComponent implements OnInit {
   }
 
   goToListado(id:Number):void{
-    this.router.navigate(['/inicio']);
+    this.router.navigate(['/listar']);
   }
 
 }

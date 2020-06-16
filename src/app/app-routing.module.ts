@@ -4,7 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 import{PerfilAddComponent} from './componentes/perfil-add/perfil-add.component';
 import { PerfilListaComponent } from './componentes/perfil-lista/perfil-lista.component';
 import{LoginComponent} from './componentes/login/login.component';
-import{InicioPerfilComponent} from './componentes/inicio-perfil/inicio-perfil.component';
 
 
 const routes: Routes = [
@@ -19,10 +18,6 @@ const routes: Routes = [
   { path: 'login', 
     component: LoginComponent,  
     pathMatch: 'full'
-  },
-  {
-    path:'inicio',
-    component:InicioPerfilComponent
   }
 ];
 
