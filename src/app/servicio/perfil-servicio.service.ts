@@ -62,8 +62,16 @@ export class PerfilServicioService {
   }
 
   public addContacto(id1:number, id2:number) {
-    //return this.http.post<Map<string, number>>(this.perfilUrl+"/altaContacto", id1, id2);
-    //return this.http.post<Contacto>(this.perfilUrl+"/altaContacto", id1, id2);
+    //return this.http.post<Map<string, number>>(this.perfilUrl+"/altaContacto", {id1, id2});
+    //return this.http.post<Contacto>(this.perfilUrl+"/altaContacto", { id1, id2});
+    return this.http.post(this.perfilUrl, {id1, id2});
+  }
+
+  public addContactoPerfil(perfil1:Perfil, perfil2:Perfil) {
+    //return this.http.post<Map<string, number>>(this.perfilUrl+"/altaContacto", {id1, id2});
+    //return this.http.post<Contacto>(this.perfilUrl+"/altaContacto", { id1, id2});
+    //return this.http.post(this.perfilUrl, {perfil1, perfil2});
+    return this.http.post(this.perfilUrl, {perfil1:perfil1, perfil2:perfil2});
   }
 
 }

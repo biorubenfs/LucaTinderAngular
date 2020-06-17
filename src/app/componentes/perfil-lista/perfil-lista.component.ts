@@ -12,6 +12,8 @@ import{PerfilServicioService} from '../../servicio/perfil-servicio.service';
 export class PerfilListaComponent implements OnInit {
 
   perfiles: Perfil[];
+  perfilLogeado:Perfil = this.perfilServicio.findByEmail('angular6@gmail.com'); 
+  perfilLike:Perfil = this.perfilServicio.findByEmail('alexjr@gmail.com');
 
   constructor(private router: Router, private perfilServicio: PerfilServicioService) { }
 
@@ -21,9 +23,15 @@ export class PerfilListaComponent implements OnInit {
       this.perfiles = data;
     });
   }
+  /*
+  crearContacto(): void {
+    this.perfilServicio.addContactoPerfil(this.perfilServicio.findByEmail('angular6@gmail.com'), 
+    this.perfilServicio.findByEmail('alexjr@gmail.com')).subscribe.
+  };
+  */
 
   crearContacto(): void {
-
+    this.perfilServicio.addContactoPerfil(this.perfilLogeado, this.perfilLike);
   };
 
   crearDescarte(): void {
