@@ -30,8 +30,8 @@
             <td style="color: black; width: 100px; max-width: 100px;">{{perfil.genero}}</td>
             <td style="color: black; width: 400px; max-width: 400px;">{{perfil.descripcion}}</td>
             <td style="color: black; width: 200px; max-width: 200px;">
-               <a class="like" style="outline:none" (click)="crearContacto()">     <i class="fa fa-heart" aria-hidden="true" ></i></a>
-               <a class="dislike"  style="outline:none" (click)="crearDescarte()"> <i class="fa fa-times" aria-hidden="true"></i></a>
+               <a class="like" style="outline:none" (click)="crearContacto(perfil)">     <i class="fa fa-heart" aria-hidden="true" ></i></a>
+               <a class="dislike"  style="outline:none" (click)="crearDescarte(perfil)"> <i class="fa fa-times" aria-hidden="true"></i></a>
             </td>
          </tr>
       </table>
