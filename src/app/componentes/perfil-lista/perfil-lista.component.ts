@@ -22,4 +22,12 @@ export class PerfilListaComponent implements OnInit {
     });
   }
 
+  crearContacto(): void {
+
+  };
+
+  crearDescarte(): void {
+
+  };
+
 }
