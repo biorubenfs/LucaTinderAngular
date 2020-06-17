@@ -1,36 +1,62 @@
-<div class="col-md-6">
-    <h2 class="text-center">Agregar Perfil</h2>
-  <form>
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" [(ngModel)]="perfil.email" placeholder="Email" name="email" class="form-control" id="email">
+<div class="header">
+  <img src="assets/Imagenes/PortadaRegistro.webp" alt="Snow" style="width:100%;">
+  <div class="centered">
+<div class="container">
+  <form th:action="@{/registro}" method="post" th:object="${perfil}">
+    <div class="row">
+      <div class="col-25">
+        <label for="email"></label>
+      </div>
+      <div class="col-75">
+        <input type="email" [(ngModel)]="perfil.email" name="email" placeholder="Email" required="required">
+      </div>
     </div>
-  
-    <div class="form-group">
-      <label for="nombre">Nombre:</label>
-      <input [(ngModel)]="perfil.nombre" placeholder="Nombre" name="nombre" class="form-control" id="nombre">
+       <div class="row">
+          <div class="col-25">
+             <label for="password"></label>
+          </div>
+          <div class="col-75">
+             <input type="password" name="password" [(ngModel)]="perfil.password" placeholder="Contraseña" required="required" maxlength="99">
+          </div>
+       </div>
+       <div class="row">
+          <div class="col-25">
+             <label for="nombre"></label>
+          </div>
+          <div class="col-75">
+             <input type="text" [(ngModel)]="perfil.nombre" name="nombre" placeholder="Nombre completo" required="required" maxlength="45">
+          </div>
+       </div>
+       <div class="row">
+          <div class="col-25">
+             <label for="edad"></label>
+          </div>
+          <div class="col-75">
+             <input type="number" name="edad" [(ngModel)]="perfil.edad" placeholder="Edad" min="18" max="99" required="required" maxlength="2">
+          </div>
+       </div>
+       <div class="row">
+          <div class="col-25">
+             <label for="genero"></label>
+          </div>
+          <div class="col-75">
+             <select id="genero" name="genero" [(ngModel)]="perfil.genero" required="required">
+                <option value="Hombre">Hombre</option>
+                <option value="Mujer">Mujer</option>
+             </select>
+          </div>
+       </div>
+       <div class="row">
+          <div class="col-25">
+             <label for="subject"></label>
+          </div>
+          <div class="col-75">
+             <textarea id="descripcion" [(ngModel)]="perfil.descripcion" name="descripcion" placeholder="Cuéntanos algo sobre ti..." style="height:200px" required="required" maxlength="450"></textarea>
+          </div>
+       </div>
+      <div class="row">
+          <button class="btn-registro center" (click)="crearPerfil()" style="user-select: none;" >REGÍSTRARSE</button>
+      </div>
+      </form>
     </div>
-  
-    <div class="form-group">
-      <label for="genero">Genero:</label>
-      <input [(ngModel)]="perfil.genero" placeholder="Genero" name="genero" class="form-control" id="genero">
-    </div>
-
-    <div class="form-group">
-        <label for="edad">Edad:</label>
-        <input [(ngModel)]="perfil.edad" placeholder="Edad" name="edad" class="form-control" id="edad">
-    </div>
-
-    <div class="form-group">
-        <label for="descripcion">Descripcion:</label>
-        <input [(ngModel)]="perfil.descripcion" placeholder="Descripcion" name="descripcion" class="form-control" id="descripcion">
-    </div>
-
-    <div class="form-group">
-        <label for="password">Password:</label>
-        <input [(ngModel)]="perfil.password" placeholder="Password" name="password" class="form-control" id="password">
-    </div>
-  
-    <button class="btn btn-success" (click)="crearPerfil()">Crear</button>
-  </form>
-  </div>
+</div>
