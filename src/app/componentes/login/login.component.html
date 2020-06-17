@@ -1,10 +1,37 @@
-<div class="container" style="text-align:center">
-
-    <h1>Inicio de sesión</h1> 
-    <form class="form">
-      <div class="form">
-      <p><input type="text" [(ngModel)]="email" name="email" placeholder="Email"><br />
-         <input type="password" name="password" placeholder="Password" autocomplete="on"></p>
-      <p><button type="submit" (click)="onSubmit()"id="login-button" class="btn btn-outline-success">Login</button></p></div>       
-    </form>
+<div class="header">
+  <img src="assets/Imagenes/PortadaLogin.webp" alt="Snow" style="width:100%;">
+  <div class="centered">
+    <div class="container-login100">
+      <div class="wrap-login100">
+              
+        <form class="login100-form validate-form" th:action="@{/login}" method="post">
+    
+          <div class="wrap-input100 validate-input" data-validate = "Enter username">
+            <input class="input100" type="text" [(ngModel)]="email" name="email" placeholder="Correo electrónico" required="required">
+          </div>
+    
+          <div class="wrap-input100 validate-input" data-validate="Enter password">
+            <input class="input100" type="password" name="password" placeholder="Password" autocomplete="on">
+          </div>
+    
+          <div class="contact100-form-checkbox">
+            <input class="input-checkbox100" id="ckb1" type="checkbox" name="recuerdame">
+            <label class="label-checkbox100" for="ckb1">
+              Recuérdame
+            </label>
+          </div>
+    
+          <div class="container-login100-form-btn">
+            <button type="submit" (click)="onSubmit()"id="login-button" class="login100-form-btn">Iniciar sesión</button>
+          </div>
+    
+          <div class="text-center p-t-90">
+            <a class="txt1" href="#">
+              <br>¿Has olvidado tu contraseña?
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
