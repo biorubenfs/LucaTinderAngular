@@ -1,34 +1,43 @@
-<div class="col-md-6">
-  <h2> Detalles Perfiles</h2>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+   integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+   crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
+   integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
+   crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="/resources/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/resources/fonts/iconic/css/material-design-iconic-font.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
-  <a style="text-align:center" routerLink="contacto">Ver Contactos</a>
-  <a style="text-align:center" routerLink="descarte">Ver Descartes</a>
-
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th class="hidden">Id</th>
-        <th>Nombre</th>
-        <th>Genero</th>
-        <th>Edad</th>
-        <th>Descripcion</th>
-        <th>Email</th>
-        <th>Acciones</th>
-
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let perfil of perfiles">
-        <td class="hidden">{{perfil.id}}</td>
-        <td>{{perfil.nombre}}</td>
-        <td>{{perfil.genero}}</td>
-        <td>{{perfil.edad}}</td>
-        <td>{{perfil.descripcion}}</td>
-        <td>{{perfil.email}}</td>
-        <td><button class="btn btn-danger" (click)="crearContacto()"> Dar Like</button>
-            <button class="btn btn-danger" (click)="crearDescarte()"> Dar Dislike</button></td>
-      </tr>
-    </tbody>
-  </table>
-  <router-outlet></router-outlet>
+<div class="header">
+   <img src="assets/Imagenes/PortadaRegistro.webp" alt="Snow" style="width:100%;">
+   <div class="centered">
+      <br>
+      <h1 style="color: white; font-size: 3em; font-family: Arial, Helvetica, sans-serif; text-align: center;">Perfiles recomendados para ti</h1>
+      <br>
+      <table style="width: 1000px;">
+         <tr class="titulo">
+            <!-- <th>Foto</th> -->
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Genero</th>
+            <th>Descripción</th>
+            <th>Match</th>
+         </tr>
+         <tr *ngFor="let perfil of perfiles" class="contenido">
+            <td style="color: black; width: 100px; max-width: 100px;">{{perfil.nombre}}</td>
+            <td style="color: black; width: 60px; max-width: 60px;">{{perfil.edad}}</td>
+            <td style="color: black; width: 100px; max-width: 100px;">{{perfil.genero}}</td>
+            <td style="color: black; width: 400px; max-width: 400px;">{{perfil.descripcion}}</td>
+            <td style="color: black; width: 200px; max-width: 200px;">
+               <a class="like" style="outline:none" (click)="crearContacto()">     <i class="fa fa-heart" aria-hidden="true" ></i></a>
+               <a class="dislike"  style="outline:none" (click)="crearDescarte()"> <i class="fa fa-times" aria-hidden="true"></i></a>
+            </td>
+         </tr>
+      </table>
+      <div style="display: inline-flex; padding: 15px;">
+         <a routerLink="descarte" style="user-select: none; padding-right: 15px;"><button class="btn hover">Perfiles descartados</button></a>
+         <a routerLink="contacto" style="user-select: none;"><button class="btn hover">Perfiles que te gustan</button></a>
+      </div>
+   </div>
 </div>
