@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import{ Router} from '@angular/router';
+import{ Router,ActivatedRoute} from '@angular/router';
 import { Perfil } from '../../modelo/perfil';
 import{PerfilServicioService} from '../../servicio/perfil-servicio.service';
+import { Contacto } from 'src/app/modelo/contacto';
+import {Descarte} from '../../modelo/descarte';
 
 @Component({
   selector: 'app-perfil-list',
@@ -11,11 +13,12 @@ import{PerfilServicioService} from '../../servicio/perfil-servicio.service';
 })
 export class PerfilListaComponent implements OnInit {
 
-  perfiles: Perfil[];
-  perfilLogeado:Perfil = this.perfilServicio.findByEmail('angular6@gmail.com'); 
-  perfilLike:Perfil = this.perfilServicio.findByEmail('alexjr@gmail.com');
+  perfiles: Perfil[]; 
+  id:number
+  contacto:Contacto;
+  descarte:Descarte;
 
-  constructor(private router: Router, private perfilServicio: PerfilServicioService) { }
+  constructor(private router: ActivatedRoute, private perfilServicio: PerfilServicioService) { }
 
   ngOnInit(): void {
     this.perfilServicio.getPerfiles()
@@ -23,19 +26,19 @@ export class PerfilListaComponent implements OnInit {
       this.perfiles = data;
     });
   }
-  /*
-  crearContacto(): void {
-    this.perfilServicio.addContactoPerfil(this.perfilServicio.findByEmail('angular6@gmail.com'), 
-    this.perfilServicio.findByEmail('alexjr@gmail.com')).subscribe.
-  };
-  */
 
-  crearContacto(): void {
-    this.perfilServicio.addContactoPerfil(this.perfilLogeado, this.perfilLike);
+  crearContacto(perfil2:Perfil): void {
+    this.router.params.subscribe(params =>{this.id= +params['id']})   
+    this.perfilServicio.addContacto(this.id,perfil2.id).subscribe(data => {
+      this.contacto = data;
+    })
   };
 
-  crearDescarte(): void {
-
+  crearDescarte(perfil1:Perfil): void {
+    this.router.params.subscribe(params =>{this.id= +params['id']})
+    this.perfilServicio.addDescarte(this.id,perfil1.id).subscribe(data => {
+      this.descarte = data;
+    }) 
   };
 
 }

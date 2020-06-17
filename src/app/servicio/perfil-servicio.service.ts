@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Perfil} from '../modelo/perfil';
 import {Contacto} from '../modelo/contacto';
+import {Descarte} from '../modelo/descarte';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -62,16 +63,11 @@ export class PerfilServicioService {
   }
 
   public addContacto(id1:number, id2:number) {
-    //return this.http.post<Map<string, number>>(this.perfilUrl+"/altaContacto", {id1, id2});
-    //return this.http.post<Contacto>(this.perfilUrl+"/altaContacto", { id1, id2});
-    return this.http.post(this.perfilUrl, {id1, id2});
+    return this.http.post<Contacto>(this.perfilUrl+"/altaContacto", {"id_perfil1" : id1,"id_perfil2" : id2});
   }
 
-  public addContactoPerfil(perfil1:Perfil, perfil2:Perfil) {
-    //return this.http.post<Map<string, number>>(this.perfilUrl+"/altaContacto", {id1, id2});
-    //return this.http.post<Contacto>(this.perfilUrl+"/altaContacto", { id1, id2});
-    //return this.http.post(this.perfilUrl, {perfil1, perfil2});
-    return this.http.post(this.perfilUrl, {perfil1:perfil1, perfil2:perfil2});
+  public addDescarte(id1:number, id2:number){
+    return this.http.post<Descarte>(this.perfilUrl+"/altaDescarte", {"id_perfil1" : id1,"id_perfil2" : id2});
   }
 
 }
