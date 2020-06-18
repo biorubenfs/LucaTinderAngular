@@ -6,6 +6,7 @@ import {PerfilListaComponent } from './componentes/perfil-lista/perfil-lista.com
 import {LoginComponent} from './componentes/login/login.component';
 import {PerfilContactoComponent} from './componentes/perfil-contacto/perfil-contacto.component';
 import {PerfilDescarteComponent} from './componentes/perfil-descarte/perfil-descarte.component';
+import {PerfilMatchComponent} from './componentes/perfil-match/perfil-match.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,9 @@ const routes: Routes = [
   },
   { path: 'listar/:id/descarte', 
     component: PerfilDescarteComponent
+  },
+  { path: 'listar/:id/juntos', 
+    component: PerfilMatchComponent
   }
 
 ];

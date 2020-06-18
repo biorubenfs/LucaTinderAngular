@@ -13,6 +13,7 @@ import { LoginComponent } from './componentes/login/login.component';
 import{LoginService} from './servicio/login.service';
 import { PerfilContactoComponent } from './componentes/perfil-contacto/perfil-contacto.component';
 import { PerfilDescarteComponent } from './componentes/perfil-descarte/perfil-descarte.component';
+import { PerfilMatchComponent } from './componentes/perfil-match/perfil-match.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PerfilDescarteComponent } from './componentes/perfil-descarte/perfil-de
     PerfilListaComponent,
     LoginComponent,
     PerfilContactoComponent,
-    PerfilDescarteComponent
+    PerfilDescarteComponent,
+    PerfilMatchComponent
   ],
   imports: [
     BrowserModule,
