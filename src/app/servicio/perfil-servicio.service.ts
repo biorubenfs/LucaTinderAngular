@@ -70,4 +70,8 @@ export class PerfilServicioService {
     return this.http.post<Descarte>(this.perfilUrl+"/altaDescarte", {"id_perfil1" : id1,"id_perfil2" : id2});
   }
 
+  public getMatches(id:number) {
+    return this.http.get<Perfil[]>(this.perfilUrl+"/listarMatches/"+id);
+  }
+
 }
