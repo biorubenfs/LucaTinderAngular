@@ -27,7 +27,8 @@
               "src/styles.css"
             ],
             "scripts": [
-              "src/assets/JS/FuncionResponsive.js"
+              "src/assets/JS/FuncionResponsive.js",
+              "src/assets/JS/PasswordVisible.js"
             ]
           },
           "configurations": {
@@ -93,7 +94,8 @@
               "src/styles.css"
             ],
             "scripts": [
-              "src/assets/JS/FuncionResponsive.js"
+              "src/assets/JS/FuncionResponsive.js",
+              "src/assets/JS/PasswordVisible.js"
             ]
           }
         },
