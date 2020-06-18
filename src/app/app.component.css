@@ -3,6 +3,11 @@ header {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .topnav {
     overflow: hidden;
     background: linear-gradient(to right, #ff3399 0%, #ff5050 100%);

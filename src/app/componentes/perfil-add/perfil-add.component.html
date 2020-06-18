@@ -12,11 +12,9 @@
       </div>
     </div>
        <div class="row">
-          <div class="col-25">
-             <label for="password"></label>
-          </div>
-          <div class="col-75">
-             <input type="password" name="password" [(ngModel)]="perfil.password" placeholder="Contraseña" required="required" maxlength="99">
+          <div class="col-75" style="margin-left: 200px;">
+             <input type="password" id="password" name="password" [(ngModel)]="perfil.password" placeholder="Contraseña" required="required" maxlength="30" style=" margin-bottom: 5px;">
+             <input type="checkbox" onclick="PasswordVisible()" style="margin-left: -30px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Ver contraseña
           </div>
        </div>
        <div class="row">
